@@ -1,19 +1,21 @@
-<body class="back">
+
     <%- include('partials/header') -%>
+    <body class="back">
     <div class="mt-5 mb-5">
     <div class="container card-container mb-5">
-      <h1 class="text-dark m-5 d-flex justify-content-center">Profile</h1>
+      
       <div class="row-cols-1  g-4 mb-5">
+        <h3 class="text-dark text-center p-5"><strong>Welcome</strong>: <%= user.userName %></h3>
         <% for(var i=0; i<posts.length; i++) {%>
         <div class="col">
-          <div class="card h-20 w-200 py-5">
+          <div class="card h-20 w-50 py-5">
             <!-- <img src="<%= posts[i].image%>" class="card-img-top" alt="..."> -->
             <a class="text-dark card-body " href="/post/<%= posts[i]._id%>">
               <h4 class="card-title text-center"><b><%= posts[i].title%></b></h4>
               <h5 class="card-text text-center"><%= posts[i].caption %></h5>
               <audio alt="<%= posts[i].caption%>" class='' controls src="<%= posts[i].image%>"></audio>
               <div class="row justify-content-between row">
-               
+              
               
               <!-- <a href="/post/<%= posts[i]._id%>" class="btn btn-primary bg-dark">View Song</a> -->
               <!-- <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">Edit</a> -->
@@ -29,8 +31,6 @@
       </div>
     </div>
     </div>
-    <div class="m-5 p-5">
     
-    </div>
     <%- include('partials/footer') -%>
     </body>
