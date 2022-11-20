@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+<body class="back"  >
+<div class="container bg-white px-4 py-1 my-4 rounded bg-opacity-50">
+    <div class="justify-content-center ">
+      <ul class="list-unstyled ">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-3 border-bottom">
+            <a href="/post/<%= posts[i]._id%>">
+              <!-- <video class="img-fluid" src="<%= posts[i].image%>"> -->
+                <h3 class="text-center text-dark"><%= posts[i].title.toUpperCase()%></h4>
+                <h6 class="text-center text-dark"><%= posts[i].caption%></h5>
+                
+                
+                  
+                  
+                <audio alt="<%= posts[i].caption%>" class='' controls src="<%= posts[i].image%>"></audio>
+                <div class="row justify-content-between row">
+                  
+                <form
+                    class="col-sm"
+                    action="/post/likePost/<%= posts[i].id %>?_method=PUT"
+                    method="POST"
+                  >
+                    <button class="btn btn-warning fa fa-heart" type="submit"></button>
+                  
+                  </form>
+                  <h5 class="col-sm text-warning">Likes: <%= posts[i].likes %></h5>
+                  </div>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
+</body>

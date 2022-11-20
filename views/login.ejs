@@ -1,0 +1,42 @@
+<%- include('partials/logged-out-header') -%>
+<body class=" back">
+<main class="container py-5 my-5 ">
+  <div class="row justify-content-center ">
+    <div class=" mt-5 p-5 ">
+      <h1 class="text-dark text-center m-3 pb-5 ">((( Cloud Sounds )))</h1>
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+      <div class="alert alert-danger "><%= el.msg %></div>
+      <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+      messages.info.forEach( el => { %>
+      <div class="alert alert-info"><%= el.msg %></div>
+      <% }) %> <% } %>
+      <form action="/login" method="POST">
+        <div class="mb-3 ">
+          <label for="exampleInputEmail1" class="form-label h4"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label h4">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-warning justify-content-center"><strong>Submit</strong></button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>
+</body>
