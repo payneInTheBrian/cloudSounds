@@ -23,6 +23,7 @@ module.exports = {
     try {
       
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      const userPost = await Post.find({ user: req.user.id });
       res.render("feed.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
@@ -76,7 +77,7 @@ module.exports = {
         }
       );
       console.log("Likes +1");
-      res.redirect(`/post/${req.params.id}`);
+      /* res.redirect(`/post/${req.params.id}`) */;
     } catch (err) {
       console.log(err);
     }
