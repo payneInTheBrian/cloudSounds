@@ -1,37 +1,41 @@
 <%- include('partials/header') -%>
 <body class="back "  >
-<div class="container card bg-white px-4 py-1 m-4 rounded  bg-opacity-50">
+
+ 
+
     
-  <div class="justify-content-center ">
-      <ul class="list-unstyled ">
+    <div class="container card-container my-5 rounded">
+      
+      <div class="row-cols-1 g-4 mb-5">
         
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-3 border-bottom">
+          <div class="col ">
+            <div class="card h-20 py-2 my-4 mx-4 ">
             <a href="/post/<%= posts[i]._id%>">
               <!-- <video class="img-fluid" src="<%= posts[i].image%>"> -->
                 <h3 class="text-center text-dark"><%= posts[i].title.toUpperCase()%></h4>
                 <!-- <h6 class="text-center text-dark"><%= posts[i].caption%></h5> -->
                   <h6 class="text-dark text-center "> <%= user.userName %></h6>
-                
+                </a>
                   
                 
                 <audio alt="<%= posts[i].caption%>" class='' controls src="<%= posts[i].image%>"></audio>
                 <div class="row justify-content-between row">
                   
                 <form
-                    class="col-sm"
+                    class="col-6 px-5 py-2"
                     action="/post/likePost/<%= posts[i].id %>?_method=PUT"
                     method="POST"
                   >
                     <button class="btn btn-warning fa fa-heart" type="submit"></button>
                   
                   </form>
-                  <h5 class="col-sm text-warning">Likes: <%= posts[i].likes %></h5>
+                  <h5 class="col-6 px-5 py-2 text-warning">Likes: <%= posts[i].likes %></h5>
                   </div>
-            </a>
-          </li>
+            
+                </div>
         <% } %>
-        </ul>
+       
     </div>
   </div>  
 <%- include('partials/footer') -%>

@@ -4,28 +4,28 @@
   <div class="row justify-content-center mt-5">
     <div class="">
       <h2 class="px-5 pb-5 text-center"><%= post.title %></h2>
-      <h3><%= post.userName %></h3>
+      <!-- <h3><%= post.userName %></h3> -->
 
 
-      <audio alt="<%= post.caption%>" class="" controls src="<%= post.image%>"></audio>
+      <audio alt="<%= post.caption%>" class="col-12" controls src="<%= post.image%>"></audio>
       <div class=" text-centered">
-        <p class="text-centered "><%= post.caption %></p>
+        <h4 class="text-centered py-4"><%= post.caption %></h4>
       </div>
       <!-- <img class="img-fluid" src="<%= post.image%>" /> -->
       <div class="row justify-content-between">
         <form
-          class="col-sm"
+          class="col-2"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
           <button class="btn btn-warning fa fa-heart" type="submit"></button>
         </form>
-        <h3 class="col-5">Likes: <%= post.likes %></h3>
+        <h3 class="col-4">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
-          class="col-sm"
+          class="col-2"
         >
           <button class="btn btn-warning fa fa-trash" type="submit"></button>
         </form>
@@ -37,33 +37,41 @@
       <h2>Add a comment</h2>
       <form action="/comment/createComment/<%=post._id%>"  method="POST">
         <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
+            
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
-        <button type="submit" class="btn btn-warning" value="Upload"><strong>Submit</strong></button>
+        <button type="submit" class="btn btn-warning mb-5" value="Upload"><strong>Submit</strong></button>
       </form>
     </div>
-    <ul>
+    <h4 class=" text-dark text-center"><strong>Comments</strong></h4>
+    <div class="mx-5 px-5">
+    <div class="bg-dark">
+      <ul>
       <% for(var i=0; i<comments.length; i++) {%>
         <%/* <!--get posts from our server db pulling from our controller-->
                   <!--controller works with view, view doesnt communicate with others--> */%>
         <div class="row">
-        <li class="col-6 justify-content-between mt-5">
+        <div class=" justify-content-between text-light mt-2">
           <%= comments[i].comment%>
           <!-- Comment Id: <%= comments[i].id%>  -->
 
           <%if(comments[i].user == user.id){ %>
+            <div class="row pb-2 ">
             <form
               action="/comment/deleteComment/<%= comments[i]._id%>?_method=DELETE"
               method="POST"
-              class="col-sm"
-            >
-              <button class="btn btn-warning fa fa-trash col-sm" type="submit"></button>
+              class="col-6 "
+            ><div class="py-1 ">
+              <button class="btn btn-warning fa fa-trash " type="submit"></button>
+            
             </form>
+            </div>
             <%}%>
-        </li>
+          </div>
       <% } %>
+    </div>
       </div>
+    </div>
     </ul>
     <!-- <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
