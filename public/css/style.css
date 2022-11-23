@@ -11,4 +11,29 @@
     color: whitesmoke
     } */
 
+.commentBg{
+    background:rgba(0,0,0,0.4);
    
+}
+
+.feed{
+    background:rgb(255, 255, 255,0.4)
+}
+
+.notOp{
+opacity: 1.0
+}
+
+   @media screen {
+        
+   }
+
+   @media screen and (min-width: 961px) and (max-width: 1880px){
+    .foot{
+        margin-top: 20em;
+    }
+    .bigAudio{
+       
+    }
+   }
+

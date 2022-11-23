@@ -10,16 +10,16 @@
         
         <% for(var i=0; i<posts.length; i++) {%>
           <div class="col ">
-            <div class="card h-20 py-2 my-4 mx-4 ">
+            <div class="feed card h-20 py-2 my-4 mx-4 ">
             <a href="/post/<%= posts[i]._id%>">
               <!-- <video class="img-fluid" src="<%= posts[i].image%>"> -->
-                <h3 class="text-center text-dark"><%= posts[i].title.toUpperCase()%></h4>
+                <h3 class="text-dark px-3"><%= posts[i].title.toUpperCase()%></h4>
                 <!-- <h6 class="text-center text-dark"><%= posts[i].caption%></h5> -->
-                  <h6 class="text-dark text-center "> <%= user.userName %></h6>
+                  <h6 class="text-dark px-5 "> <%= user.userName %></h6>
                 </a>
                   
                 
-                <audio alt="<%= posts[i].caption%>" class='' controls src="<%= posts[i].image%>"></audio>
+                <audio alt="<%= posts[i].caption%>" class='mx-1 px-3 col-12' controls src="<%= posts[i].image%>"></audio>
                 <div class="row justify-content-between row">
                   
                 <form
@@ -33,6 +33,8 @@
                   <h5 class="col-6 px-5 py-2 text-warning">Likes: <%= posts[i].likes %></h5>
                   </div>
             
+
+                  
                 </div>
         <% } %>
        

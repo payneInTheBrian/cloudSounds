@@ -6,10 +6,10 @@
       <h2 class="px-5 pb-5 text-center"><%= post.title %></h2>
       <!-- <h3><%= post.userName %></h3> -->
 
-
+      <h4 class="text-centered py-4"><%= post.caption %></h4>
       <audio alt="<%= post.caption%>" class="col-12" controls src="<%= post.image%>"></audio>
       <div class=" text-centered">
-        <h4 class="text-centered py-4"><%= post.caption %></h4>
+        
       </div>
       <!-- <img class="img-fluid" src="<%= post.image%>" /> -->
       <div class="row justify-content-between">
@@ -44,14 +44,14 @@
       </form>
     </div>
     <h4 class=" text-dark text-center"><strong>Comments</strong></h4>
-    <div class="mx-5 px-5">
-    <div class="bg-dark">
+    <div class="mx-5 px-5  ">
+    <div class="commentBg" >
       <ul>
       <% for(var i=0; i<comments.length; i++) {%>
         <%/* <!--get posts from our server db pulling from our controller-->
                   <!--controller works with view, view doesnt communicate with others--> */%>
-        <div class="row">
-        <div class=" justify-content-between text-light mt-2">
+        <div class="row ">
+        <div class=" justify-content-between text-light mt-2 ">
           <%= comments[i].comment%>
           <!-- Comment Id: <%= comments[i].id%>  -->
 
@@ -73,10 +73,8 @@
       </div>
     </div>
     </ul>
-    <!-- <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
-    </div> -->
+</div>
+    
   </div>
   
 </div>
