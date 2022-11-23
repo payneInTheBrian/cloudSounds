@@ -14,9 +14,10 @@
             <a href="/post/<%= posts[i]._id%>">
               <!-- <video class="img-fluid" src="<%= posts[i].image%>"> -->
                 <h3 class="text-dark px-3"><%= posts[i].title.toUpperCase()%></h4>
+                </a>
                 <!-- <h6 class="text-center text-dark"><%= posts[i].caption%></h5> -->
                   <h6 class="text-dark px-5 "> <%= user.userName %></h6>
-                </a>
+                
                   
                 
                 <audio alt="<%= posts[i].caption%>" class='mx-1 px-3 col-12' controls src="<%= posts[i].image%>"></audio>
