@@ -2,13 +2,14 @@
     <%- include('partials/header') -%>
     <body class="back">
     
-    <div class="container card-container my-5 rounded">
+    <div class="container card-container my-5 rounded ">
       
-      <div class="row-cols-1  g-4 mb-5">
+      <div class="row-cols-1 feed g-4 mb-5 pb-5">
+        
         <h2 class="text-dark text-center p-5"><strong>Welcome</strong>: <%= user.userName %></h2>
         <% for(var i=0; i<posts.length; i++) {%>
         <div class="col">
-          <div class="card feed h-20 py-2 my-4 mx-4">
+          <div class="card commentBg h-20 py-2 my-4 mx-4">
             <!-- <img src="<%= posts[i].image%>" class="card-img-top" alt="..."> -->
             <a class="text-dark card-body " href="/post/<%= posts[i]._id%>">
               <h4 class="card-title text-center"><b><%= posts[i].title%></b></h4>

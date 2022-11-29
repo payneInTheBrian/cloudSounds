@@ -11,10 +11,13 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
+const feedRoutes = require("./routes/feed");
+const PORT = 4400
 
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
+
 
 // Passport config
 require("./config/passport")(passport);
@@ -59,9 +62,11 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
+app.use("/feed", feedRoutes)
 
 
-//Server Running
-app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
+
+
+app.listen(process.env.PORT || PORT, ()=>{
+  console.log(`Server running on port ${PORT}`)
 });
