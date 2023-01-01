@@ -69,4 +69,4 @@ app.use("/feed", feedRoutes)
 
 app.listen(process.env.PORT || PORT, ()=>{
   console.log(`Server running on port ${PORT}`)
-});
+}); 
