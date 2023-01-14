@@ -26,16 +26,19 @@
                
                 
                 <div class="row">
-                  
+                  <div class="col-5">
                 <form
-                    class="col-sm px-5 py-2"
+                    class="px-5 py-2"
                     action="/feed/likePost/<%= posts[i]._id%>?_method=PUT"
                     method="POST"
                   >
                     <button class="btn btn-warning fa fa-heart" type="submit"></button>
                   
                   </form>
-                  <h5 class="col-sm px-5 py-2 text-warning shadowT">Likes: <%= posts[i].likes %></h5>
+                </div>
+             
+                  <h5 class="col-5 px-3 py-2 text-warning shadowT">Likes: <%= posts[i].likes %></h5>
+                  
                     <!-- <div class="col-sm">
                     <button 
                     onclick="copyContent('hello')" 
