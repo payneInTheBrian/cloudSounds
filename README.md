@@ -59,6 +59,7 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
   - Redo the front end in REACT in order to like and comment without interrupting the music that is playing
   - Add to comments what user is making the comment
   - Create a profile model to allow further customization (e.g. profile picture) and allow users to see other peoples' profiles.
+  - Change model to include an array for likes to limit the likes to one.
   
   ---
   
