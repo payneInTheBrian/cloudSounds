@@ -66,6 +66,9 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 # Other cool projects like this one
   - [SetLiszt](https://github.com/iPlayDrumsOnMyGuitar/Setliszt)
   - [McRonalds](https://github.com/iPlayDrumsOnMyGuitar/McRonalds)
+  - [Super Rad](https://github.com/iPlayDrumsOnMyGuitar/superRad)
+  - [Villains Inc](https://github.com/iPlayDrumsOnMyGuitar/villainsINC)
   
+
 
 
