@@ -3,7 +3,7 @@
 
 # Live @
 
-https://cloudsounds.cyclic.app/
+https://cloud-sounds.herokuapp.com
 
 # Introduction
 
@@ -13,13 +13,13 @@ App built using the MVC Architecture. It implemented "authorization" so people c
 
 # Objectives
 
-- It's an app that lets you host your own music and share it with others.
+- Cloud Sounds is an app that lets you host your own music and share it with others.
 
 ---
 
 # Who is this for? 
 
-- Musicians 
+- Musicians and music lovers
 
 ---
 
@@ -56,7 +56,6 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 ---
 
 # Optimization
-  - Redo the front end in REACT in order to like and comment without interrupting the music that is playing
   - Add to comments what user is making the comment
   - Create a profile model to allow further customization (e.g. profile picture) and allow users to see other peoples' profiles.
   - Change model to include an array for likes to limit the likes to one.
